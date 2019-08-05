@@ -1,0 +1,9 @@
+#!/bin/bash
+USER=`cat user`
+PASS=`cat passwd`
+IGNORED_TABLES_STRING=''
+while IFS= read -r line; do
+    [ ! -z "${line// }" ] && IGNORED_TABLES_STRING+=" --ignore-table=$line"
+done < ignore_tables
+mysqldump --all-databases --user=$USER -p$PASS --max-allowed-packet=1024M $IGNORED_TABLES_STRING
+
