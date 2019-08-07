@@ -1,7 +1,7 @@
 #!/bin/bash
 BASE_DIR=$(dirname "$0")
 cd $BASE_DIR
-TARGET_DIR=`cat target_dir`
+TARGET_DIR=`cat .target_dir`
 rm $TARGET_DIR/weekly_4.sql
 mv $TARGET_DIR/weekly_3.sql $TARGET_DIR/weekly_4.sql
 mv $TARGET_DIR/weekly_2.sql $TARGET_DIR/weekly_3.sql

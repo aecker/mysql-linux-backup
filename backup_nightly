@@ -1,6 +1,6 @@
 #!/bin/bash
 BASE_DIR=$(dirname "$0")
 cd $BASE_DIR
-TARGET_DIR=`cat target_dir`
+TARGET_DIR=`cat .target_dir`
 ./backup_db > $TARGET_DIR/nightly_`date +\%A`.sql
 
